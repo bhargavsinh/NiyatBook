@@ -1,0 +1,136 @@
+/* NiyatBook Global Styles */
+:root {
+  --nb-red: #e50914;
+  --nb-red-dark: #b20710;
+  --nb-bg: #0a0a0a;
+  --nb-card: #181818;
+  --nb-border: #2a2a2a;
+}
+
+body {
+  font-family: 'Inter', 'Noto Sans Gujarati', system-ui, sans-serif;
+  background: var(--nb-bg);
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* Netflix-style hover */
+.profile-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.profile-card:hover {
+  transform: scale(1.08);
+}
+.profile-card:hover .profile-ring {
+  border-color: var(--nb-red);
+  box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.4);
+}
+
+/* Cards */
+.nb-card {
+  background: var(--nb-card);
+  border: 1px solid var(--nb-border);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+.nb-card:hover {
+  border-color: #444;
+  transform: translateY(-2px);
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, #e50914 0%, #b20710 100%);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+.btn-secondary {
+  background: #333;
+  color: white;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+}
+.btn-secondary:hover {
+  background: #444;
+}
+
+/* Status badges */
+.badge-pending { background: #f59e0b; color: #000; }
+.badge-confirmed { background: #10b981; color: #fff; }
+.badge-cancelled { background: #ef4444; color: #fff; }
+.badge-completed { background: #3b82f6; color: #fff; }
+.badge-rejected { background: #6b7280; color: #fff; }
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background: #111;
+  border-right: 1px solid var(--nb-border);
+  min-height: 100vh;
+}
+.sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  color: #aaa;
+  transition: all 0.15s;
+  border-left: 3px solid transparent;
+}
+.sidebar a:hover, .sidebar a.active {
+  color: #fff;
+  background: rgba(229, 9, 20, 0.1);
+  border-left-color: var(--nb-red);
+}
+
+/* Form inputs */
+.nb-input {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #fff;
+  width: 100%;
+  transition: border-color 0.2s;
+}
+.nb-input:focus {
+  outline: none;
+  border-color: var(--nb-red);
+}
+
+/* Professional card in search */
+.pro-card {
+  background: #181818;
+  border: 1px solid #2a2a2a;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+.pro-card:hover {
+  border-color: #e50914;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(229, 9, 20, 0.15);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #111; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #555; }
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
